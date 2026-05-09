@@ -44,9 +44,47 @@ function divide(a, b) {
   return a / b;
 }
 
+/**
+ * Return remainder of a divided by b. Throws on division by zero.
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ */
+function modulo(a, b) {
+  if (b === 0) {
+    throw new Error('Division by zero');
+  }
+  return a % b;
+}
+
+/**
+ * Return base raised to exponent
+ * @param {number} base
+ * @param {number} exponent
+ * @returns {number}
+ */
+function power(base, exponent) {
+  return Math.pow(base, exponent);
+}
+
+/**
+ * Return square root of n; throws for negative input
+ * @param {number} n
+ * @returns {number}
+ */
+function squareRoot(n) {
+  if (n < 0) {
+    throw new Error('Square root of negative number');
+  }
+  return Math.sqrt(n);
+}
+
 module.exports = {
   add,
   subtract,
   multiply,
   divide,
+  modulo,
+  power,
+  squareRoot,
 };
